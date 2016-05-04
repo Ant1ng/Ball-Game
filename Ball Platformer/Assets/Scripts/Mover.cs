@@ -1,20 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mover : MonoBehaviour {
-
-    private Rigidbody rb;
-
+public class Mover : MonoBehaviour
+{
     public float x;
     public float y;
     public float z;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject wall1;
+    public GameObject wall2;
+
+    private Rigidbody rb;
+
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
-	}
-	
-	void FixedUpdate () {
+    }
+
+    void FixedUpdate()
+    {
         rb.velocity = new Vector3(x, y, z);
-	}
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == wall1 || other.gameObject == wall2)
+            x = -x;
+    }
 }

@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{2C931600-3C22-C3D5-6206-E2C06CC437F1}") = "Ball Platformer", "Assembly-CSharp.csproj", "{EA620CE2-7E4A-6960-158E-F903B183DFB8}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ball Platformer.CSharp", "Ball Platformer.CSharp.csproj", "{38231128-A617-DD22-BDEA-8FD3FCC5A47B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA620CE2-7E4A-6960-158E-F903B183DFB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA620CE2-7E4A-6960-158E-F903B183DFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA620CE2-7E4A-6960-158E-F903B183DFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA620CE2-7E4A-6960-158E-F903B183DFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38231128-A617-DD22-BDEA-8FD3FCC5A47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38231128-A617-DD22-BDEA-8FD3FCC5A47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38231128-A617-DD22-BDEA-8FD3FCC5A47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38231128-A617-DD22-BDEA-8FD3FCC5A47B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

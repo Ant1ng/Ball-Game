@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Mover Test.unity
+- path: Assets/Scenes/lvl 133t.unity
   isLoaded: 1
   isActive: 1
