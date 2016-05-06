@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         float moveUp = 0.0f;
 
-        if (Input.GetKey(KeyCode.SPACE))
+		if (Input.GetKey(KeyCode.Space))
         {
         	if(rb.velocity.y == 0){
         		moveUp = 8.0f;
