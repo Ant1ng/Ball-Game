@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController2 : MonoBehaviour {
+public class PlayerController3 : MonoBehaviour {
 
     private Rigidbody rb;
 
