@@ -21,12 +21,13 @@ public class CameraController: MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         rb1 = player.GetComponent<Rigidbody>();
-        rb.position = rb1.position + offset;
+        rb.position = rb1.position;
         angle = rb1.rotation;
     }
 
     void Update ()
     {
-        rb.position = rb1.position + offset;
+        rb.position = rb1.position;
+        rb.rotation = rb1.rotation;
 	}
 }

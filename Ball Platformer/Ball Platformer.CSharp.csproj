@@ -66,8 +66,6 @@
     <Compile Include="Assets\Anthony&apos;s Work\Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Anthony&apos;s Work\Assets\Script\PlayerController2.cs" />
     <Compile Include="Assets\Charles&apos; and Kevin&apos;s Work\PlayerController.cs" />
-    <Compile Include="Assets\Erik&apos;s Work\CameraController2.cs" />
-    <Compile Include="Assets\Erik&apos;s Work\PlayerController3.cs" />
     <Compile Include="Assets\Jae&apos;s and Jack&apos;s Work\Mover.cs" />
     <Compile Include="Assets\Leon&apos;s Work\GameController.cs" />
   </ItemGroup>
