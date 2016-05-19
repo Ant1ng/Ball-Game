@@ -25,6 +25,6 @@ public class Mover : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == wall1 || other.gameObject == wall2)
-            x = -x;
+            y = -y;
     }
 }
