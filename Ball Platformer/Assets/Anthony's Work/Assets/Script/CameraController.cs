@@ -28,6 +28,5 @@ public class CameraController: MonoBehaviour {
     void Update ()
     {
         rb.position = rb1.position;
-        rb.rotation = rb1.rotation;
 	}
 }

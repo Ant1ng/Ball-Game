@@ -22,13 +22,13 @@ public class GameController : MonoBehaviour {
 	    
 	}
 
-    void addScore (int add)
+    public void addScore (int add)
     {
         score = score + add;
         SetScoreText();
     }
 
-    void gainLives (int add)
+    public void gainLives (int add)
     {
         lives = lives + add;
         SetLivesText();
