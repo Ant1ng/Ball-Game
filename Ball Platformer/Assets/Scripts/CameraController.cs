@@ -4,18 +4,16 @@ using System.Collections;
 public class CameraController: MonoBehaviour {
 
     public GameObject player;
-    public Vector3 offset;
+    public float StartAltitude;
+    public float Radius;
 
     private Vector3 ballPosition;
     private Quaternion angle;
 
     private Rigidbody rb;
     private Rigidbody rb1;
-        
-    void Postion(GameObject ball)
-    {
-        player = ball;
-    }
+
+    private bool boolean = true;
     
 	void Start ()
     {
@@ -23,10 +21,23 @@ public class CameraController: MonoBehaviour {
         rb1 = player.GetComponent<Rigidbody>();
         rb.position = rb1.position;
         angle = rb1.rotation;
+        rb.position = rb1.position + new Vector3(0.0f, StartAltitude, Radius);
     }
 
-    void Update ()
+    void FixedUpdate ()
     {
-        rb.position = rb1.position + offset;
-	}
+        rb.position = new Vector3(rb.position.x, rb1.position.y + StartAltitude, rb.position.z);
+    }
+
+    public void Rotate (float number, float speed)
+    {
+        if (number != 0)
+        {
+            if (boolean)
+            {
+                transform.Rotate(Vector3.up * number * speed);
+                transform.RotateAround(player.transform.position, Vector3.up, number * 100 * Time.smoothDeltaTime);
+            }
+        }
+    }
 }

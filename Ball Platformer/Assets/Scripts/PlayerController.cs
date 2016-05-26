@@ -9,12 +9,19 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jump;
 
-    public GameController gameController;
+    private CameraController cameraController;
+    public GameObject camera;
+    public float cameraSpeed;
+
+    private GameController gameController;
+    public GameObject gameControllerObject;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gameController = gameControllerObject.GetComponent<GameController>();
+        cameraController = camera.GetComponent<CameraController>();
         rb.velocity = Vector3.zero;
     }
 
@@ -64,6 +71,21 @@ public class PlayerController : MonoBehaviour
             z = jump;
         }
 
-        transform.Translate(new Vector3(x, z/speed, y) * speed * Time.smoothDeltaTime);
+        if (x != 0)
+        {
+            cameraController.Rotate(x, cameraSpeed);
+        }
+
+        if (y != 0.0f)
+        {
+            transform.Translate(new Vector3 (
+                (rb.position.x - camera.transform.position.x),
+                0.0f,
+                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
+            camera.transform.Translate(new Vector3(
+                (rb.position.x - camera.transform.position.x),
+                0.0f,
+                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
+        }
     }
 }
