@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     private CameraController cameraController;
     public GameObject camera;
-    public float cameraSpeed;
 
     private GameController gameController;
     public GameObject gameControllerObject;
@@ -73,19 +72,20 @@ public class PlayerController : MonoBehaviour
 
         if (x != 0)
         {
-            cameraController.Rotate(x, cameraSpeed);
+            cameraController.Rotate(x);
         }
 
         if (y != 0.0f)
         {
-            transform.Translate(new Vector3 (
-                (rb.position.x - camera.transform.position.x),
-                0.0f,
-                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
-            camera.transform.Translate(new Vector3(
-                (rb.position.x - camera.transform.position.x),
-                0.0f,
-                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
-        }
+			Vector3 movement = new Vector3 (
+				                   (rb.position.x - camera.transform.position.x),
+				                   0.0f,
+				                   rb.position.z - camera.transform.position.z);
+				transform.Translate((movement/movement.magnitude) * speed * y * Time.smoothDeltaTime);
+//            camera.transform.Translate(new Vector3(
+//                (rb.position.x - camera.transform.position.x),
+//                0.0f,
+//                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
+       }
     }
 }
