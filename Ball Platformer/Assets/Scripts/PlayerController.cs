@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jump;
 
     private CameraController cameraController;
-    public GameObject camera;
+    public GameObject cameraObject;
 
     private GameController gameController;
     public GameObject gameControllerObject;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         gameController = gameControllerObject.GetComponent<GameController>();
-        cameraController = camera.GetComponent<CameraController>();
+        cameraController = cameraObject.GetComponent<CameraController>();
         rb.velocity = Vector3.zero;
     }
 
@@ -28,26 +28,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
-        //bool force = false;
-
-        //Vector3 v = rb.velocity;
-        //float x = Input.GetAxis("Horizontal");
-        //float y = Input.GetAxis("Vertical");
-        //float z = 0.0f;
-
-        //gameController.scoreText.text = "Velocity: " + rb.velocity.y;
-
-        //if (Input.GetKey(KeyCode.M) && rb.velocity.y == 0.0f)
-        //{
-        //    z = jump;
-        //}
-
-        //v.x = speed * x;
-        //v.y = v.y + z;
-        //v.z = speed * y;
-
-        //rb.velocity = v;
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -77,15 +57,11 @@ public class PlayerController : MonoBehaviour
 
         if (y != 0.0f)
         {
-			Vector3 movement = new Vector3 (
-				                   (rb.position.x - camera.transform.position.x),
-				                   0.0f,
-				                   rb.position.z - camera.transform.position.z);
-				transform.Translate((movement/movement.magnitude) * speed * y * Time.smoothDeltaTime);
-//            camera.transform.Translate(new Vector3(
-//                (rb.position.x - camera.transform.position.x),
-//                0.0f,
-//                rb.position.z - camera.transform.position.z) * speed * y * Time.smoothDeltaTime);
+            print(cameraObject.transform.position.y);
+            Vector3 movement = new Vector3 ((rb.position.x - cameraObject.transform.position.x), 0.0f, (rb.position.z - cameraObject.transform.position.z));
+			transform.Translate((movement/movement.magnitude) * speed * y * Time.smoothDeltaTime);
+            print((movement / movement.magnitude) * speed * y * Time.smoothDeltaTime);
+            cameraObject.transform.Translate((movement / movement.magnitude) * speed * y * Time.smoothDeltaTime);
        }
     }
 }
