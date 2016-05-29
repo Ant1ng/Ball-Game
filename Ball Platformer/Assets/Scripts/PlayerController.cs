@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             print(cameraObject.transform.position.y);
             Vector3 movement = new Vector3 ((rb.position.x - cameraObject.transform.position.x), 0.0f, (rb.position.z - cameraObject.transform.position.z));
 			transform.Translate((movement/movement.magnitude) * speed * y * Time.smoothDeltaTime);
-            print((movement / movement.magnitude) * speed * y * Time.smoothDeltaTime);
             cameraObject.transform.Translate((movement / movement.magnitude) * speed * y * Time.smoothDeltaTime);
        }
     }
