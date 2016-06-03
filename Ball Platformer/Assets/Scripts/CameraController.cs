@@ -22,7 +22,7 @@ public class CameraController: MonoBehaviour {
     void FixedUpdate ()
     {
         rb.position = new Vector3(rb.position.x, rb1.position.y + StartAltitude, rb.position.z);
-		transform.LookAt (player.transform.position);
+        transform.LookAt (player.transform.position);
     }
 
     public void Rotate (float number)
